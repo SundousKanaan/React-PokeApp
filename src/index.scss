@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  // Common
+  --red: #ff4f68;
+  --green: #00ea93;
+  --gold: #ffd833;
+  --silver: #adb1b6;
+  --copper: #b87333;
+  --black-alpha: rgba(0, 0, 0, 0.5);
+
+  // LIGHTMODE
+  --dark-blue: #0e0940;
+  --dark-blue-alpha: rgba(14, 9, 64, 0.2);
+  --gray: #86849f;
+  --light-gray: #f3f4f5;
+  --purple: #5631e8;
+  --purple-alpha: rgba(86, 49, 232, 0.12);
+  --white: white;
+  --white-transparent: rgba(255, 255, 255, 0.001);
+  --dark-gray: #2c2e33;
+
+  // Backgrounds
+  --background: var(--light-gray);
+  --background-light: var(--white);
+  --background-accent: var(--purple);
+  --background-accent-alpha: var(--purple-alpha);
+  --background-negative: var(--dark-blue);
+  --background-transparent: var(--white-transparent);
+
+  // Foregrounds
+  --foreground: var(--dark-blue);
+  --foreground-alpha: var(--dark-blue-alpha);
+  --foreground-light: var(--gray);
+  --foreground-accent: var(--purple);
+  --foreground-negative: var(--white);
+}
