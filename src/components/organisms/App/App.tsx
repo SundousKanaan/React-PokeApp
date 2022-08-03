@@ -1,8 +1,9 @@
 import React from "react";
 
-import "./App.scss";
+import $ from "./app.module.scss";
 
 function App() {
+  console.log($);
   return (
     <main className="app">
       <h1>Dit is een test</h1>
