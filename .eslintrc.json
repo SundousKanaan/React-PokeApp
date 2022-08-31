@@ -43,7 +43,7 @@
       // jsx/runtime is used in the project so it is automatically included by Babel.
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off",
-      "react-hooks/exhaustive-deps": "off",
+      "react-hooks/exhaustive-deps": "warn",
       "import/no-unresolved": "off",
       "import/prefer-default-export": "off",
       "import/extensions": "off",
@@ -53,6 +53,12 @@
           "devDependencies": true
         }
       ],
+      "prettier/prettier":[
+            "error",
+            {
+                "tabWidth":4
+            }
+    ],
       "import/order": [
         "error",
         {
@@ -60,6 +66,12 @@
             "order": "asc",
             "caseInsensitive": true
           },
+          "pathGroups": [
+            {
+              "pattern": "@app/**",
+              "group": "internal"
+            }
+          ],
           "pathGroupsExcludedImportTypes": ["react"],
           "groups": 
             ["builtin", "external", "internal", "parent", "sibling", "type", "index"]
