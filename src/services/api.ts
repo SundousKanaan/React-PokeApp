@@ -1,4 +1,5 @@
 import Axios from "axios";
+import { API_BASEURL } from "@app/core/constants";
 import {
     PokemonResponse,
     PokemonListResponse,
@@ -20,7 +21,7 @@ export type ResponseMapDelete = {};
 export type ResponseMapPut = {};
 
 const api = Axios.create({
-    baseURL: "https://pokeapi.co/api/v2/",
+    baseURL: API_BASEURL,
 });
 
 api.interceptors.response.use((response) => {

@@ -1,0 +1,15 @@
+:root {
+    // define all theme colors in variables
+    --white             : #FFF;
+    --offwhite          : #F7F7FF;
+    --primary_daylight  : #EDF6FF;
+    --primary_midnight  : #0E0940;
+    --primary_purple    : #5631E8;
+
+    // assign all theme colors to the place they should be rendered
+    --background_color: var(--primary_daylight);
+    --pokemon_background_color: var(--offwhite);
+    --sidebar_background_color: var(--white);
+    --pokemon_title_background: var(--white);
+    
+}

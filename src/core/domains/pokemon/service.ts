@@ -13,7 +13,7 @@ export async function getPokemon(name: string): Promise<Pokemon> {
 export async function getListPokemon(): Promise<string[]> {
     const { results } = await api.get("pokemon", {
         params: {
-            limit: 5,
+            limit: 20,
             offset: 0,
         },
     });
