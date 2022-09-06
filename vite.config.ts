@@ -1,6 +1,5 @@
 import reactRefresh from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import requireTransform from "vite-plugin-require-transform";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(({ command }) => {
@@ -9,9 +8,6 @@ export default defineConfig(({ command }) => {
             reactRefresh(),
             tsconfigPaths({
                 projects: ["./tsconfig.json"],
-            }),
-            requireTransform({
-                fileRegex: /(.tsx?)$/,
             }),
         ],
         publicDir: "public",
