@@ -5,8 +5,8 @@ This also is the main reason that we've set this up.
 If you are not that familiar with React right now, we would recommend you to also check out the links in the reading list on the Wiki. This way you can read on how to do some things and immediately try to build it yourself and put it to practice. 
 
 ## Fork and Clone the repository
-Before you get started on this we would like you to clone this repo and name it as following:  
-`Code Challenge - {firstname}-{lastname}`  
+Before you get started on this we would like you to fork this repo and name it as following:  
+`Code Challenge - React.{firstname}.{lastname}`  
 This will be the repository you will be working in and where you will be able to create Pull Requests in as well.  
 You will create a PR per functionality/user story. It can be possible that a user story is to big to place in a single PR, if this happens, you can 'split' the work in 2 different PRs (for example: one for the functionality and one for UI).
 The guideline of a PR is a maximum of about 20-30 files, if it gets bigger than this, it should be split in multiple PR's.
