@@ -6,7 +6,7 @@ If you are not that familiar with React right now, we would recommend you to als
 
 ## Fork and Clone the repository
 Before you get started on this we would like you to fork this repo and name it as following:  
-`Code Challenge - React.{firstname}.{lastname}`  
+`code_challenge_react.{firstname}.{lastname}`  
 This will be the repository you will be working in and where you will be able to create Pull Requests in as well.  
 You will create a PR per functionality/user story. It can be possible that a user story is to big to place in a single PR, if this happens, you can 'split' the work in 2 different PRs (for example: one for the functionality and one for UI).
 The guideline of a PR is a maximum of about 20-30 files, if it gets bigger than this, it should be split in multiple PR's.
@@ -41,7 +41,7 @@ Next to that you'll need to know that there is no deadline for this, you can wor
 
 With each PR you can 'check' the user story that is related to it, so you have a clear overview of what still needs to be done.
 
-- [ ] The user must be able to see all the pokemons in the styled overview
+- [ ] The user must be able to see a list of pokemons in the styled overview
 
 - [ ] The user must be able to see the sidebar and its content
 
@@ -53,7 +53,9 @@ With each PR you can 'check' the user story that is related to it, so you have a
 
 - [ ] The user must be able to see all the stats of a pokemon in three tabs
 
-- [ ] The user must be able to see an overview of all their favorite Pokemons on a different page
+- [ ] The user must be able to see an overview of all their favorite Pokemons on a different page/route
+
+- [ ] The user should see a 'not found' page when the route is not identified
 
 - [ ] The user should be able to search through all the pokemons
 

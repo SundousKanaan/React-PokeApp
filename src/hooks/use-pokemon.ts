@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPokemon, Pokemon } from "../core/domains/pokemon";
+import { getPokemon, Pokemon } from "@app/core/domains/pokemon";
 
 export default function usePokemon(name: string) {
     const [pokemon, setPokemon] = useState<Pokemon | null>(null);

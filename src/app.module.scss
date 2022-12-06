@@ -24,12 +24,3 @@ html {
     background-color: var(--sidebar_background_color);
     margin-top: 2rem;
 }
-
-.list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    padding: 0;
-    overflow-y: auto;
-    height: calc(100vh - 2rem);
-}

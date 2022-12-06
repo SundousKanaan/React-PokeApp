@@ -1,12 +1,9 @@
 import React from "react";
-import Pokemon from "@app/components/molecule/pokemon/pokemon";
-import usePokemonNames from "@app/hooks/use-pokemon-names";
+import { Route, Routes } from "react-router-dom";
+import { routes } from "@app/routes";
 import $ from "./app.module.scss";
 
 const App: React.FunctionComponent = () => {
-    // Example usage of the two hooks
-    const { names } = usePokemonNames();
-
     return (
         /**
          * By creating a classname with $ it can be defined in app.module.scss
@@ -19,14 +16,11 @@ const App: React.FunctionComponent = () => {
                     <h2>Sidebar</h2>
                 </section>
                 {/* Create a list by mapping over all the pokemon names and rendering the Pokemon Component */}
-                <section>
-                    <h1>Pokemons</h1>
-                    <ul className={$.list}>
-                        {names.map((name) => (
-                            <Pokemon key={name} name={name} />
-                        ))}
-                    </ul>
-                </section>
+                <Routes>
+                    {routes.map(({ path, view: Component }) => (
+                        <Route key={path} path={path} element={<Component />} />
+                    ))}
+                </Routes>
             </div>
         </main>
     );
