@@ -1,28 +1,22 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "lib": ["es2017", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
     "module": "esnext",
-    "target": "esnext",
+    "target": "es2018",
     "jsx": "react-jsx",
+    "isolatedModules": true,
+    "strict": true,
+    "noEmit": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "composite": true,
-    "noImplicitAny": false,
+    "typeRoots": ["./node_modules/@types", "./typings"],
+    "baseUrl": ".",
     "paths": {
       "@app/*": ["./src/*"]
     },
+    "types": ["vitest/globals"],
+    "resolveJsonModule": true
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js"],
+  "exclude": ["./node_modules"]
 }

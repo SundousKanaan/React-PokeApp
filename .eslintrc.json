@@ -1,97 +1,38 @@
 {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "airbnb",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended",
-      "plugin:import/recommended",
-      "plugin:import/typescript"
-    ],
-    "plugins": [
-      "jest",
-      "react-hooks"
-    ],
-    "env": {
-      "browser": true,
-      "jest/globals": true
-    },
-    "rules": {
-      "no-shadow": "off",
-      "@typescript-eslint/no-shadow": ["error"],
-      "react/jsx-indent": ["error", 4],
-      "react/jsx-indent-props": ["error", 4],
-      "@typescript-eslint/indent": "off",
-      "@typescript-eslint/no-use-before-define": ["error", { "functions": true, "classes": true, "variables": true }],
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/member-delimiter-style": "off",
-      "@typescript-eslint/prefer-interface": "off",
-      "@typescript-eslint/explicit-member-accessibility": "off",
-      "lines-between-class-members": "off",
-      "jsx-a11y/no-noninteractive-tabindex": "off",
-      "no-restricted-exports": "off",
-      "react/function-component-definition": [2, {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
-      }],
-      // Prevents TS errors when directly returning children/expressions
-      "react/jsx-no-useless-fragment": [2, { "allowExpressions": true }],
-      "react/require-default-props": "off",
-      "react/jsx-filename-extension": "off",
-      "react/prop-types": "off",
-      "react/jsx-one-expression-per-line": "off",
-      "react-hooks/rules-of-hooks": "error",
-      // jsx/runtime is used in the project so it is automatically included by Babel.
-      "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off",
-      "react-hooks/exhaustive-deps": "warn",
-      "import/no-unresolved": "off",
-      "import/prefer-default-export": "off",
-      "import/extensions": "off",
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true
-        }
-      ],
-      "prettier/prettier":[
-            "error",
-            {
-                "tabWidth":4
-            }
-    ],
-      "import/order": [
-        "error",
-        {
-          "alphabetize": {
-            "order": "asc",
-            "caseInsensitive": true
-          },
-          "pathGroups": [
-            {
-              "pattern": "@app/**",
-              "group": "internal"
-            }
-          ],
-          "pathGroupsExcludedImportTypes": ["react"],
-          "groups": 
-            ["builtin", "external", "internal", "parent", "sibling", "type", "index"]
-        }
-      ]
-    },
-    "overrides": [
+  "extends": ["triple"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+  "rules": {
+    "import/order": [
+      "error",
       {
-        "files": ["*.js"],
-        "rules": {
-          "@typescript-eslint/no-var-requires": "off"
-        }
-      },
-      {
-        "files": ["*.ts", "*.tsx"],
-        "rules": {
-          "import/extensions": "off",
-          "@typescript-eslint/explicit-module-boundary-types": "off"
-        }
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "pathGroups": [
+          {
+            "pattern": "@src/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "type",
+          "index"
+        ]
       }
     ]
   }
-  
+}

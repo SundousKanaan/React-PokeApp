@@ -27,6 +27,7 @@ This will get the app started and running on port `3000`
 ## The Design
 There is a design that is created in Figma, Figma also is the tool that we use for all the designs within Triple.
 This way you will get to know how to work with Figma and to recreate the design in the web application.
+Please note that you are looking at the 'Web' tab within Figma, this also contains the responsive design.
 https://www.figma.com/file/dsgGXcu5WELIvRW90m5308/Pokemon-Code-Challenge?node-id=15%3A2863
 
 ## The API
@@ -37,9 +38,11 @@ https://pokeapi.co/
 ## The challenges
 To get you started, a small base has already been setup in React, the first API calls are already implemented and from here on you should be able to continue by taking on each challenge step by step.
 The most important thing to know is that you can always aks questions to your mentor. This is why they are here, and why they are seated near you. They are already familiar with the challenge and therefore will be able to help you where needed.
-Next to that you'll need to know that there is no deadline for this, you can work on the challenges and get to know React on your own tempo. As you can see the user story's are setup with MoSCoW, so not all challenges **must** be done.
+Next to that you'll need to know that there is no deadline for this, you can work on the challenges and get to know React on your own tempo. As you can see the user stories are setup with MoSCoW, so not all challenges **must** be done.
 
 With each PR you can 'check' the user story that is related to it, so you have a clear overview of what still needs to be done.
+
+- [ ] The user must be able to see all of the following stories on either PC, Tablet of Mobile (Responsive)
 
 - [ ] The user must be able to see a list of pokemons in the styled overview
 

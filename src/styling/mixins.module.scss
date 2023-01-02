@@ -1,58 +1,57 @@
-
 // Mixin that sets styling to scale an element on aspect ratio
 @mixin set-item-aspect-ratio-height($width, $hight) {
-    height: 0;
-    padding-top: calc((100% / #{$width}) * #{$hight});
+  height: 0;
+  padding-top: calc((100% / #{$width}) * #{$hight});
 }
 
 // Breakpoint helpers
 @mixin extreme-small-phone-only {
-    @media (max-width: ($bp_small_phone - 1px)) {
-        @content;
-    }
+  @media (max-width: ($bp_small_phone - 1px)) {
+    @content;
+  }
 }
 @mixin extreme-small-phone-and-larger {
-    @media (min-width: $bp_small_phone) {
-        @content;
-    }
+  @media (min-width: $bp_small_phone) {
+    @content;
+  }
 }
 @mixin small-phone-only {
-    @media (max-width: ($bp_phone - 1px)) {
-        @content;
-    }
+  @media (max-width: ($bp_phone - 1px)) {
+    @content;
+  }
 }
 @mixin small-phone-and-larger {
-    @media (min-width: $bp_phone) {
-        @content;
-    }
+  @media (min-width: $bp_phone) {
+    @content;
+  }
 }
 @mixin phone-only {
-    @media (max-width: ($bp_tablet - 1px)) {
-        @content;
-    }
+  @media (max-width: ($bp_tablet - 1px)) {
+    @content;
+  }
 }
 @mixin tablet-only {
-    @media (min-width: $bp_tablet) and (max-width: $bp_laptop) {
-        @content;
-    }
+  @media (min-width: $bp_tablet) and (max-width: $bp_laptop) {
+    @content;
+  }
 }
 @mixin tablet-and-larger {
-    @media (min-width: $bp_tablet) {
-        @content;
-    }
+  @media (min-width: $bp_tablet) {
+    @content;
+  }
 }
 @mixin big-tablet-and-larger {
-    @media (min-width: $bp_tablet_big) {
-        @content;
-    }
+  @media (min-width: $bp_tablet_big) {
+    @content;
+  }
 }
 @mixin laptop-and-larger {
-    @media (min-width: ($bp_laptop + 1px)) {
-        @content;
-    }
+  @media (min-width: ($bp_laptop + 1px)) {
+    @content;
+  }
 }
 @mixin monitor-and-larger {
-    @media (min-width: $bp_monitor) {
-        @content;
-    }
+  @media (min-width: $bp_monitor) {
+    @content;
+  }
 }
