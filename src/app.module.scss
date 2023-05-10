@@ -2,25 +2,25 @@
 @import "./styling/helpers.module.scss";
 @import "normalize.css";
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   background-color: var(--background_color);
-  font-size: 16px;
+  font-size: 10px;
   font-family: "Rubik";
   font-weight: 300;
   overflow: hidden;
 }
 
 .view {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 32rem 1fr;
+  gap: 1rem;
   padding: 0 1rem;
+}
+
+.sidebar {
+  width: 100%;
+  height: calc(100vh - 4rem);
+  border-radius: 1rem;
+  background-color: var(--sidebar_background_color);
+  margin-top: 2rem;
 }

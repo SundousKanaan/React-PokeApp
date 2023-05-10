@@ -1,5 +1,5 @@
 import { paths } from "@app/core/constants/paths";
-import { Home } from "./views/home";
+import HomeView from "@app/views/home";
 
 type iRoute = {
   path: string;
@@ -10,6 +10,6 @@ type iRoute = {
 export const routes: iRoute[] = [
   {
     path: paths.home,
-    view: Home,
+    view: HomeView,
   },
 ];
