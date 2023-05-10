@@ -1,0 +1,25 @@
+.sidebar_container {
+  padding: 2rem;
+  display: none;
+
+  .open {
+    display: block;
+  }
+
+  @include big-tablet-and-larger {
+    display: block;
+  }
+}
+
+.sidebar {
+  width: 20rem;
+  height: calc(100vh - 4rem);
+  border-radius: 1rem;
+  background-color: var(--sidebar_background_color);
+  padding: 1rem 1.5rem;
+  box-shadow: var(--box-shadow);
+
+  @include monitor-and-larger {
+    padding: 1.5rem;
+  }
+}
