@@ -80,11 +80,7 @@
   gap: 0.1875rem;
   cursor: pointer;
 
-  > div {
+  > img {
     align-self: flex-end;
-    width: 0.1875rem;
-    height: 0.1875rem;
-    background-color: var(--primary_midnight);
-    border-radius: 50%;
   }
 }
