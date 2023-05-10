@@ -6,16 +6,20 @@ import $ from "./PokemonList.module.scss";
 export const PokemonList = () => {
   const { names, loading } = usePokemonNames();
 
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (!names || names.length === 0) {
+    // TODO: make a better empty state
+    return <div>empty state</div>;
+  }
+
   return (
     <ul className={$.list}>
-      {loading ? (
-        <Loader />
-      ) : names && names.length > 0 ? (
-        names.map((name) => <Pokemon key={name} name={name} />)
-      ) : (
-        // TODO: make a better empty state
-        <div>empty state</div>
-      )}
+      {names.map((name) => (
+        <Pokemon key={name} name={name} />
+      ))}
     </ul>
   );
 };
