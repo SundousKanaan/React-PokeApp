@@ -1,3 +1,11 @@
+// Breakpoints
+$bp_small_phone: 390px;
+$bp_phone: 480px;
+$bp_tablet: 768px;
+$bp_tablet_big: 1024px;
+$bp_laptop: 1366px;
+$bp_monitor: 1440px;
+
 // Mixin that sets styling to scale an element on aspect ratio
 @mixin set-item-aspect-ratio-height($width, $hight) {
   height: 0;
