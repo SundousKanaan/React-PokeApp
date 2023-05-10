@@ -12,8 +12,6 @@
     "import/order": [
       "error",
       {
-        "endOfLine": "auto",
-        "import/prefer-default-export": "off",
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true
