@@ -1,0 +1,38 @@
+.list {
+  display: grid;
+  max-width: 60.5rem;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding-bottom: 6rem;
+  overflow-y: auto;
+  scrollbar-width: 0;
+  grid-auto-rows: max-content;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include extreme-small-phone-only {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @include extreme-small-phone-and-larger {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include tablet-and-larger {
+    grid-template-columns: repeat(3, 1fr);
+    // padding-bottom: 6rem;
+  }
+
+  @include tablet-and-larger {
+    // missing height + 1.25rem padding
+    padding-bottom: 6.5rem;
+  }
+
+  @include monitor-and-larger {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
