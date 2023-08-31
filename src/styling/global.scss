@@ -1,0 +1,32 @@
+@import "./fonts/fonts.module";
+@import "./helpers.module.scss";
+@import "normalize.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  // define all theme colors in variables
+  --white: #{$color-white};
+  --offwhite: #{$color-offwhite};
+  --primary_daylight: #{$color-primary_daylight};
+  --primary_midnight: #{$color-primary_midnight};
+  --primary_purple: #{$color-primary_purple};
+
+  // assign all theme colors to the place they should be rendered
+  --background_color: var(--primary_daylight);
+  --pokemon_background_color: var(--offwhite);
+  --sidebar_background_color: var(--white);
+  --pokemon_title_background: var(--white);
+}
+
+html {
+  background-color: var(--background_color);
+  font-size: 10px;
+  font-family: "Rubik";
+  font-weight: 300;
+  overflow: hidden;
+}

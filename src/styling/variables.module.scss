@@ -1,14 +1,5 @@
-:root {
-  // define all theme colors in variables
-  --white: #fff;
-  --offwhite: #f7f7ff;
-  --primary_daylight: #edf6ff;
-  --primary_midnight: #0e0940;
-  --primary_purple: #5631e8;
-
-  // assign all theme colors to the place they should be rendered
-  --background_color: var(--primary_daylight);
-  --pokemon_background_color: var(--offwhite);
-  --sidebar_background_color: var(--white);
-  --pokemon_title_background: var(--white);
-}
+$color-white: #fff;
+$color-offwhite: #f7f7ff;
+$color-primary_daylight: #edf6ff;
+$color-primary_midnight: #0e0940;
+$color-primary_purple: #5631e8;

@@ -1,15 +1,17 @@
-import { paths } from "@app/core/constants/paths";
-import HomeView from "@app/views/home";
+import paths from "~src/constants/paths";
+import HomeLayout from "~src/layouts/HomeLayout/HomeLayout";
 
-type iRoute = {
+type Route = {
   path: string;
   view: React.FC;
   exact?: boolean;
 };
 
-export const routes: iRoute[] = [
+const routes: Route[] = [
   {
     path: paths.home,
-    view: HomeView,
+    view: HomeLayout,
   },
 ];
+
+export default routes;

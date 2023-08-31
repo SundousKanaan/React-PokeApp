@@ -1,27 +1,25 @@
+import { PokemonAbility, PokemonSprites, Pokemon } from "~src/models";
 import {
-  Ability,
-  Sprites,
-  Pokemon,
-  PokemonDefinitionReponse,
-  PokemonResponse,
-  SpritesResponse,
-  AbilityResponse,
-} from "@app/core/domains/pokemon/models";
+  PokemonListDTO,
+  PokemonDTO,
+  SpritesDTO,
+  AbilityDTO,
+} from "~src/services/pokemon/dto-types";
 
 function transformType(response: { type: { name: string } }) {
   return response?.type?.name;
 }
 
-function transformAbility(response: AbilityResponse) {
+function transformAbility(response: AbilityDTO): PokemonAbility {
   return {
     name: response.name,
     isHidden: response.is_hidden,
     slot: response.slot,
-  } as Ability;
+  };
 }
 
-function transformSprites(response: SpritesResponse) {
-  const sprites: Sprites = {
+function transformSprites(response: SpritesDTO): PokemonSprites {
+  return {
     backDefault: response.back_default,
     backShiny: response.back_shiny ?? undefined,
     backFemale: response.back_female ?? undefined,
@@ -31,10 +29,9 @@ function transformSprites(response: SpritesResponse) {
     frontFemale: response.front_female ?? undefined,
     frontShinyFemale: response.front_shiny_female ?? undefined,
   };
-  return sprites;
 }
 
-export function transformPokemon(response: PokemonResponse): Pokemon {
+export function transformPokemon(response: PokemonDTO): Pokemon {
   const pokemon: Pokemon = {
     name: response.name,
     abilities: response.abilities?.map(transformAbility) ?? [],
@@ -45,11 +42,23 @@ export function transformPokemon(response: PokemonResponse): Pokemon {
     types: response.types?.map(transformType) ?? [],
     weight: response.weight,
   };
+
   return pokemon;
 }
 
-export function transformPokemonNames(
-  pokemons: PokemonDefinitionReponse[]
+export function transformPokemonNames(pokemons: PokemonListDTO): string[] {
+  return pokemons.results.map((pokemon) => pokemon.name);
+}
+
+export function transformPokemonEvolutionChain(
+  response: any,
+  chain: string[] = []
 ): string[] {
-  return pokemons.map((pokemon) => pokemon.name);
+  chain.push(response.species.name);
+  const first = response.evolves_to[0];
+  if (first) {
+    transformPokemonEvolutionChain(first, chain);
+  }
+
+  return chain;
 }

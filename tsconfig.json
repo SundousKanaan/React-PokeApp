@@ -12,7 +12,7 @@
     "typeRoots": ["./node_modules/@types", "./typings"],
     "baseUrl": ".",
     "paths": {
-      "@app/*": ["./src/*"]
+      "~src/*": ["./src/*"]
     },
     "types": ["vitest/globals"],
     "resolveJsonModule": true
