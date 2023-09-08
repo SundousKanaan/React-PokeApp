@@ -1,0 +1,40 @@
+@import "./src/styling/fonts/fonts.module";
+
+.label {
+    width: 100%;
+    border-radius: .75rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--searchBar-background);
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    align-items: center;
+    overflow: hidden;
+}
+
+.icon{
+    justify-self: center;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+
+    font-family: "Rubik";
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 120%;
+
+    color: var(--primary_midnight);
+    border: none;
+    background-color: var(--searchBar-background);
+}
+
+.input:focus{
+    outline:none;
+}
+
+.input::-webkit-search-cancel-button{
+    display: none;
+}

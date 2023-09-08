@@ -1,10 +1,55 @@
+.componentsContainer {
+  padding: 0 1.5rem;
+  // overflow-y: hidden;
+}
+
 .list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+  gap: 1rem;
   padding: 0;
 }
 
-.list-item {
+.listItem {
   list-style: none;
+}
+
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--titles-color);
+}
+
+// Tablet small
+@media (min-width: 64rem) {
+  .componentsContainer {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+  }
+
+  .header{
+    grid-area: 1/1/2/2;
+  }
+
+  .listContainer {
+    height: 100vh;
+    padding: 2rem 3rem;
+    padding-bottom: 0;
+    grid-area: 1/2/2/-1;
+  }
+
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    padding-bottom: 3rem;
+  }
+}
+
+// Web
+@media (min-width: 90rem){
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  }
 }

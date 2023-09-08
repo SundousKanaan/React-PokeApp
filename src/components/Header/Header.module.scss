@@ -1,0 +1,72 @@
+.pokemonlogoContainer {
+    display: grid;
+    grid-template-columns: 3rem auto;
+    gap: 2.5rem;
+    align-items: center;
+    justify-items: center;
+
+    padding-top: 3.5625rem;
+    margin-bottom: 10%;
+}
+
+.pokemonlogoContainer .logo {
+    grid-area: 1/1/2/-1;
+}
+
+
+.menuButton {
+    grid-area: 1/1;
+    display: inline-flex;
+    padding: 0.625rem;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 6.1875rem;
+
+    background-color: var(--menu_background_color);
+    box-shadow: 0 0 1em var(--shadow), 0 0 1em var(--shadow);
+    z-index: 100;
+}
+
+.menuButton img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+.closeSidebarButton {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: .5;
+
+    transform: translateX(-100%);
+
+    z-index: 999999999;
+    transition: .5s;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.closeSidebarButton.menuIsOpened {
+    transform: translateX(0%);
+}
+
+// Tablet small
+@media (min-width: 64rem) {
+    .pokemonlogoContainer {
+        display: none;
+        // transform: none;
+    }
+}
+
+
+// Web
+@media (min-width: 90rem) {
+    .closeSidebarButton {
+        display: none;
+    }
+
+}

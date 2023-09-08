@@ -21,12 +21,25 @@
   --pokemon_background_color: var(--offwhite);
   --sidebar_background_color: var(--white);
   --pokemon_title_background: var(--white);
+
+  --menu_background_color: var(--offwhite);
+  --shadow: rgba(48, 55, 115, 0.15);
+  --titles-color: rgba(14, 9, 64, 1);
+  --pokemon-info-button-background: var(--white);
+  --poki-index-color: rgba(255,255,255,1);
+  --active-button-tekst: rgba(255,255,255,1);
+  --searchBar-background: rgba(246,246,255,1);
+  --sideBar-Containers-border-color: #E7E6EC;
 }
 
 html {
   background-color: var(--background_color);
-  font-size: 10px;
-  font-family: "Rubik";
+  // font-family: "Rubik";
+  font-family: "Cabinet Grotesk";
   font-weight: 300;
   overflow: hidden;
+}
+
+button{
+  border: none;
 }

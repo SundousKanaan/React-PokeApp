@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import routes from "~src/routes";
-import $ from "./App.module.scss";
+import $ from "./app.module.scss";
 
 const App: React.FunctionComponent = () => {
   return (
@@ -11,9 +11,7 @@ const App: React.FunctionComponent = () => {
      * that other components with the same classname can effect the styling as well
      */
     <div className={$.view}>
-      <section className={$.sidebar}>
-        <h2>Sidebar</h2>
-      </section>
+      
       <main className={$.main}>
         {/* Create a list by mapping over all the pokemon names and rendering the Pokemon Component */}
         <Routes>

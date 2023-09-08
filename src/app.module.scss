@@ -1,18 +1,12 @@
 .view {
   height: 100vh;
   display: grid;
-  grid-template-columns: 32rem 1fr;
+  // grid-template-columns: 32rem 1fr;
   gap: 1rem;
-  padding: 0 1rem;
+
+  position: relative;
 }
 
-.sidebar {
-  width: 100%;
-  height: calc(100vh - 4rem);
-  border-radius: 1rem;
-  background-color: var(--sidebar_background_color);
-  margin-top: 2rem;
-}
 
 .main {
   height: 100%;

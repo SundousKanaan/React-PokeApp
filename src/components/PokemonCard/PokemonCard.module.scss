@@ -5,6 +5,26 @@
   justify-content: flex-end;
   align-items: center;
   background-color: var(--pokemon_background_color);
+  border-radius: 1rem;
+  // border: solid 2px green;
+  box-shadow: 0 0 1rem var(--shadow), 0 0 1rem var(--shadow);
+  position: relative;
+}
+
+.pokedex {
+  padding: 0.25rem 0.375rem 0.125rem 0.375rem;
+  border-radius: .25rem;
+  color: var(--poki-index-color);
+  background-color: var(--primary_purple);
+
+  position: absolute;
+  top: .1rem;
+  left: 1rem;
+
+  text-align: center;
+  font-family: "Rubik";
+  font-size: 0.625rem;
+  text-transform: uppercase;
 }
 
 .img {
@@ -14,12 +34,37 @@
   object-fit: contain;
 }
 
+.pokemonNameContainer {
+  width: 100%;
+  border-radius: 0 0 1rem 1rem;
+  overflow: hidden;
+  padding: 0.75rem;
+
+
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--pokemon_title_background);
+}
+
 .title {
+  width: 100%;
   align-self: center;
   text-align: center;
   background-color: var(--pokemon_title_background);
   margin: 0;
-  padding: 2rem;
-  width: 100%;
+  padding-left: .5rem;
+  text-align: start;
+
   vertical-align: middle;
+  color: var(--titles-color);
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.pokemonNameContainer button {
+  background-color: var(--pokemon-info-button-background);
+  display: grid;
+  place-content: center;
+
 }
