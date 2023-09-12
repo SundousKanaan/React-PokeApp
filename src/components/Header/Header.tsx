@@ -5,7 +5,7 @@ import $ from "./Header.module.scss";
 
 const Header: React.FunctionComponent = () => {
   const [isOpened, setIsOpened] = React.useState(false);
-  function menuOpen() {
+  function openMenu() {
     setIsOpened(!isOpened);
   }
 
@@ -17,7 +17,7 @@ const Header: React.FunctionComponent = () => {
           src="images/pokemon-logo.svg"
           alt="Pokemon logo image"
         />
-        <button className={$.menuButton} onClick={menuOpen}>
+        <button className={$.menuButton} onClick={openMenu}>
           <img src="/icons/Menu.svg" alt="menu svg icon" />
         </button>
       </div>
@@ -27,7 +27,7 @@ const Header: React.FunctionComponent = () => {
         className={classnames($.closeSidebarButton, {
           [$.menuIsOpened]: isOpened,
         })}
-        onClick={menuOpen}
+        onClick={openMenu}
       ></button>
     </>
   );

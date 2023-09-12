@@ -12,11 +12,10 @@
     gap: 1rem;
     padding: 0.75rem 1.25rem;
     border-radius: .75rem;
-    // background-color: transparent;
     opacity: 0.65;
 }
 
-.inactiveButton p {
+.inactiveButton span {
     justify-self: start;
 
     font-family: "Rubik";
@@ -40,6 +39,6 @@
     filter: brightness(100);
 }
 
-.activeButton p {
+.activeButton span {
     color: var(--active-button-tekst);
 }

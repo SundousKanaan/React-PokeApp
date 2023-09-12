@@ -1,0 +1,33 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
+    gap: 1rem;
+    padding: 0;
+}
+
+.listItem {
+    list-style: none;
+}
+
+
+h1 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--titles-color);
+}
+
+// Tablet small
+@media (min-width: 64rem) {
+    .list {
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        padding-bottom: 3rem;
+    }
+}
+
+// Web
+@media (min-width: 85rem) {
+    .list {
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+}

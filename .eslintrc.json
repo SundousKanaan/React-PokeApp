@@ -14,7 +14,8 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "crlf"
+        "endOfLine": "crlf",
+        "tabWidth": 2
       }
     ],
     "import/order": [

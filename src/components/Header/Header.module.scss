@@ -23,7 +23,7 @@
     border-radius: 6.1875rem;
 
     background-color: var(--menu_background_color);
-    box-shadow: 0 0 1em var(--shadow), 0 0 1em var(--shadow);
+    box-shadow: 0 0 1em var(--box-shadow);
     z-index: 100;
 }
 
@@ -58,10 +58,8 @@
 @media (min-width: 64rem) {
     .pokemonlogoContainer {
         display: none;
-        // transform: none;
     }
 }
-
 
 // Web
 @media (min-width: 90rem) {

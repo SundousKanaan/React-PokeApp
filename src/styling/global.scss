@@ -9,21 +9,20 @@
 }
 
 :root {
-  // define all theme colors in variables
   --white: #{$color-white};
   --offwhite: #{$color-offwhite};
   --primary_daylight: #{$color-primary_daylight};
   --primary_midnight: #{$color-primary_midnight};
   --primary_purple: #{$color-primary_purple};
 
-  // assign all theme colors to the place they should be rendered
   --background_color: var(--primary_daylight);
   --pokemon_background_color: var(--offwhite);
   --sidebar_background_color: var(--white);
   --pokemon_title_background: var(--white);
 
   --menu_background_color: var(--offwhite);
-  --shadow: rgba(48, 55, 115, 0.15);
+  --shadow-color: rgba(48, 55, 115, 0.15);
+  --box-shadow: 0 .2rem 1rem 0 var(--shadow-color);
   --titles-color: rgba(14, 9, 64, 1);
   --pokemon-info-button-background: var(--white);
   --poki-index-color: rgba(255,255,255,1);
@@ -34,7 +33,6 @@
 
 html {
   background-color: var(--background_color);
-  // font-family: "Rubik";
   font-family: "Cabinet Grotesk";
   font-weight: 300;
   overflow: hidden;

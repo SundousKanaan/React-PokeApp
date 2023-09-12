@@ -31,16 +31,16 @@ const SidebarMenu: React.FC<Props> = ({ menuState }) => {
           />
           <SidebarButton
             name="Favorites"
-            icon="Favorites"
+            icon="unfavorited"
             locationPath="/favorites"
             isActive={location.pathname === "/favorites"}
           />
         </div>
 
-        <div className={$.rightsContainer}>
+        <footer className={$.rightsContainer}>
           <p>Copyright © 2022 Triple. All rights reserved.</p>
           <p>Pokémon and Pokémon character names are trademarks of Nintendo.</p>
-        </div>
+        </footer>
       </section>
     </>
   );

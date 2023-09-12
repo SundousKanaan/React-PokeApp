@@ -7,6 +7,7 @@ export async function getPokemon(name: string): Promise<Pokemon> {
   const response = await api.get<PokemonDTO>(`/pokemon/${name}`, {
     params: { name },
   });
+
   return transformPokemon(response.data);
 }
 
