@@ -6,11 +6,9 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--pokemon-info-button-background);
-    box-shadow: var(--box-shadow);
-    z-index: 2;
-    animation: open .15s 1 both linear;
+    box-shadow: var(--box-shadow), var(--box-shadow);
+    animation: open 0.15s 1 both linear;
     transform-origin: top center;
-
 }
 
 @keyframes open {

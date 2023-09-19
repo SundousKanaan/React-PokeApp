@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { InView } from "react-intersection-observer";
 import MorePopup from "~src/components/MorePopup/MorePopup";
 import usePokemon from "~src/hooks/usePokemon";
 import $ from "./PokemonCard.module.scss";
@@ -7,56 +8,75 @@ interface Props {
   name: string;
   onAddToFavorites: () => void;
   isFavorited: boolean;
+  toggleDetailsView: () => void;
 }
 
 const PokemonCard = ({
   name,
   onAddToFavorites,
   isFavorited = false,
+  toggleDetailsView,
 }: Props) => {
   const { pokemon } = usePokemon(name);
-  const pokeID: number = pokemon?.order || 0;
+  const pokeID: number = pokemon?.id || 0;
   const pokedex: string = pokeID.toString().padStart(3, "0");
   const [popoverOpen, setPopoverOpen] = useState(false);
 
-  const handlePopoverOpen = () => {
-    setPopoverOpen(true);
+  const handleTogglePopover = () => {
+    if (popoverOpen) {
+      setPopoverOpen(false);
+    } else {
+      setPopoverOpen(true);
+    }
   };
 
-  const handlePopoverClose = () => {
-    setPopoverOpen(false);
-  };
-
-  const handleAddToFavorites = () => {
+  const handleFavorites = () => {
     if (onAddToFavorites) {
       onAddToFavorites();
+      handleTogglePopover();
+    }
+  };
+
+  const handleDetails = () => {
+    toggleDetailsView();
+    handleTogglePopover();
+  };
+
+  const handleIntersection = (inView: boolean) => {
+    if (!inView && popoverOpen) {
+      setPopoverOpen(false);
     }
   };
 
   return (
-    <section className={$.container}>
-      <p className={$.pokedex}>{pokedex}</p>
+    <InView onChange={handleIntersection}>
+      {({ ref }) => (
+        <section className={$.container} ref={ref}>
+          <p className={$.pokedex}>{pokedex}</p>
 
-      <img
-        className={$.img}
-        alt={pokemon?.name}
-        src={pokemon?.sprites.frontDefault}
-      />
+          <img
+            className={$.img}
+            alt={pokemon?.name}
+            src={pokemon?.sprites.frontDefault}
+          />
 
-      <div className={$.pokemonNameContainer}>
-        <h2 className={$.title}>{pokemon?.name}</h2>
-        <MorePopup
-          isOpen={popoverOpen}
-          onClose={handlePopoverClose}
-          onAddToFavorites={handleAddToFavorites}
-          isFavorited={isFavorited}
-        >
-          <button className={$.popupButton} onClick={handlePopoverOpen}>
-            <img src="/icons/morePopup.svg" alt="more popup" />
-          </button>
-        </MorePopup>
-      </div>
-    </section>
+          <div className={$.pokemonNameContainer}>
+            <h2 className={$.title}>{pokemon?.name}</h2>
+            <MorePopup
+              isOpen={popoverOpen}
+              onClose={handleTogglePopover}
+              onAddToFavorites={handleFavorites}
+              isFavorited={isFavorited}
+              toggleDetailsView={handleDetails}
+            >
+              <button className={$.popupButton} onClick={handleTogglePopover}>
+                <img src="/icons/morePopup.svg" alt="more popup" />
+              </button>
+            </MorePopup>
+          </div>
+        </section>
+      )}
+    </InView>
   );
 };
 

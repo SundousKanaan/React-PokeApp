@@ -1,0 +1,58 @@
+.stateList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  & .stateListItem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+
+    & .stat {
+      width: 100%;
+      font-size: 0.9rem;
+      line-height: 125%;
+      color: var(--primary_midnight);
+    }
+
+    & .statName {
+      text-align: start;
+      font-weight: 600;
+    }
+
+    & .baseStat {
+      text-align: end;
+      font-weight: 400;
+      opacity: 0.6;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0.25rem;
+      background-color: var(--shades-grey);
+      grid-area: 2/1/2/-1;
+      border-radius: 6rem;
+    }
+
+    & .statBar {
+      display: block;
+      grid-area: 2/1/2/-1;
+      height: 0.25rem;
+      background-color: var(--primary_purple);
+      border-radius: 6rem;
+      animation: stateBarAnimation 1s 1 ease-in-out;
+      transform-origin: left;
+    }
+  }
+}
+
+@keyframes stateBarAnimation {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

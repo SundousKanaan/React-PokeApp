@@ -1,0 +1,129 @@
+.evolutionsList {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+
+  & .evolutionsItem {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: var(--evolution-shadow);
+    background-color: var(--white);
+    position: relative;
+    animation: appearance 2s 1 both linear;
+
+    &:not(:last-child)::before {
+      content: "";
+      width: 5rem;
+      height: 1.25rem;
+      position: absolute;
+      bottom: -2.125rem;
+
+      background-image: url("/icons/dashes.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.3;
+    }
+
+    & .nameContainer {
+      width: 100%;
+      order: 2;
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      & .name {
+        color: var(--primary_midnight);
+        font-size: 1rem;
+        font-style: normal;
+        line-height: 120%;
+        order: 1;
+        align-self: stretch;
+      }
+
+      & .id {
+        width: fit-content;
+        padding: 0.25rem 0.375rem 0.125rem 0.375rem;
+        color: var(--poki-index-color);
+        font-size: 0.625rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.625rem;
+        border-radius: 0.25rem;
+        background-color: var(--primary_purple);
+      }
+    }
+
+    & .imagesContainer {
+      width: 5rem;
+      height: 5rem;
+      order: 1;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      position: relative;
+      background-color: var(--primary_daylight);
+      border-radius: 0.5rem 0 0 0.5rem;
+      overflow: hidden;
+
+      & .evolutionImg {
+        display: block;
+        position: absolute;
+      }
+
+      & .frontImg {
+        animation: slider 5s ease-in-out infinite backwards;
+      }
+
+      & .backImg {
+        animation: slider 5s 2.5s ease-in-out infinite backwards;
+      }
+    }
+  }
+}
+
+@keyframes slider {
+  0% {
+    transform: translatey(-100%);
+  }
+
+  50% {
+    transform: translatey(0%);
+  }
+
+  100% {
+    transform: translatey(100%);
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Tablet small
+@media (min-width: 64rem) {
+  .evolutionsList {
+    width: 80%;
+  }
+}
+
+// Web
+@media (min-width: 85rem) {
+  .evolutionsList {
+    width: 100%;
+  }
+}

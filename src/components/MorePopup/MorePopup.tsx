@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Popover } from "react-tiny-popover";
 import ActionButtons from "~src/components/ActionButtons/ActionButtons";
 import $ from "./MorePopup.module.scss";
@@ -8,6 +8,7 @@ interface Props {
   onClose: () => void;
   onAddToFavorites: () => void;
   isFavorited: boolean;
+  toggleDetailsView: () => void;
 }
 
 const MorePopup = ({
@@ -15,8 +16,14 @@ const MorePopup = ({
   onClose,
   onAddToFavorites,
   isFavorited,
-  children, //
+  toggleDetailsView,
+  children,
 }: React.PropsWithChildren<Props>) => {
+  const [showState, setShowState] = useState(false);
+  function handelToggleShowState() {
+    setShowState(!showState);
+  }
+
   return (
     <Popover
       isOpen={isOpen}
@@ -26,7 +33,14 @@ const MorePopup = ({
       onClickOutside={onClose}
       content={
         <div className={$.container}>
-          <ActionButtons name="Open Pokémon" icon="open" />
+          <ActionButtons
+            name="Open Pokémon"
+            icon="open"
+            onClick={() => {
+              handelToggleShowState();
+              toggleDetailsView();
+            }}
+          />
           <ActionButtons
             name={isFavorited ? "Favorited" : "Add to favorites"}
             icon={isFavorited ? "favorited" : "unfavorited"}

@@ -5,7 +5,6 @@ type FavoritesContextType = {
   favoritedState: string[];
   toggleFavorite: (pokemonName: string) => void;
 };
-// const initialFavoritesContext: FavoritesContextType = null;
 
 type UserProviderProps = {
   children: ReactNode;

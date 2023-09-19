@@ -1,10 +1,22 @@
-import { PokemonAbility, PokemonSprites, Pokemon } from "~src/models";
+import {
+  PokemonAbility,
+  PokemonSprites,
+  Pokemon,
+  PokemonSpecies,
+  PokemonEvolutionChain,
+  PokemonEvolution,
+} from "~src/models";
 import {
   PokemonListDTO,
   PokemonDTO,
   SpritesDTO,
   AbilityDTO,
+  PokemonSpeciesDTO,
+  PokemonEvolutionChainDTO,
+  PokemonEvolutionDTO,
 } from "~src/services/pokemon/dto-types";
+import getPokemonIdByUrl from "~src/utils/get-pokemon-id";
+import { getPokemonBackSpriteById, getPokemonSpriteById } from "~src/utils/get-pokemon-image";
 
 function transformType(response: { type: { name: string } }) {
   return response?.type?.name;
@@ -12,7 +24,7 @@ function transformType(response: { type: { name: string } }) {
 
 function transformAbility(response: AbilityDTO): PokemonAbility {
   return {
-    name: response.name,
+    ability: response.ability,
     isHidden: response.is_hidden,
     slot: response.slot,
   };
@@ -34,6 +46,7 @@ function transformSprites(response: SpritesDTO): PokemonSprites {
 export function transformPokemon(response: PokemonDTO): Pokemon {
   const pokemon: Pokemon = {
     name: response.name,
+    species: response.species,
     abilities: response.abilities?.map(transformAbility) ?? [],
     sprites: transformSprites(response.sprites),
     isDefault: response.is_default,
@@ -41,6 +54,13 @@ export function transformPokemon(response: PokemonDTO): Pokemon {
     id: response.id,
     types: response.types?.map(transformType) ?? [],
     weight: response.weight,
+    height: response.height,
+    base: response.base_experience,
+    stats:
+      response.stats?.map((stat) => ({
+        baseStat: stat.base_stat,
+        statName: stat.stat.name,
+      })) ?? [],
   };
 
   return pokemon;
@@ -50,15 +70,48 @@ export function transformPokemonNames(pokemons: PokemonListDTO): string[] {
   return pokemons.results.map((pokemon) => pokemon.name);
 }
 
-export function transformPokemonEvolutionChain(
-  response: any,
-  chain: string[] = []
-): string[] {
-  chain.push(response.species.name);
-  const first = response.evolves_to[0];
-  if (first) {
-    transformPokemonEvolutionChain(first, chain);
+export function transformPokemonSpecies(
+  response: PokemonSpeciesDTO
+): PokemonSpecies {
+  const evolutionChain: PokemonSpecies = {
+    evolution_chain: response.evolution_chain,
+  };
+  return evolutionChain;
+}
+
+const getPokemonEvolutions = (
+  evolution: PokemonEvolutionDTO
+): PokemonEvolution[] => {
+  return [
+    {
+      id: getPokemonIdByUrl(evolution.species.url),
+      name: evolution.species.name,
+      url: evolution.species.url,
+      sprite: getPokemonSpriteById(getPokemonIdByUrl(evolution.species.url)),
+      sprite_Back: getPokemonBackSpriteById(getPokemonIdByUrl(evolution.species.url)),
+      is_baby: evolution.is_baby,
+      species: evolution.species,
+    },
+    ...evolution.evolves_to.flatMap((evolution_to) => {
+      return getPokemonEvolutions(evolution_to);
+    }),
+  ];
+};
+
+const transformPokemonEvolutionChain = (
+  response: PokemonEvolutionChainDTO
+): PokemonEvolutionChain => {
+  if (typeof response.chain !== "object" || response.chain === null) {
+    throw new Error("response.chain is not an object");
   }
 
-  return chain;
-}
+  const flattenedEvolutions = getPokemonEvolutions(response.chain);
+
+  const result: PokemonEvolutionChain = {
+    id: response.id,
+    chain: flattenedEvolutions,
+  };
+  return result;
+};
+
+export default transformPokemonEvolutionChain;

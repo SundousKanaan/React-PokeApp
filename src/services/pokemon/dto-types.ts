@@ -1,5 +1,9 @@
+import exp from "constants";
+
 export type AbilityDTO = {
-  name: string;
+  ability: {
+    name: string;
+  };
   slot: number;
   is_hidden: boolean;
 };
@@ -20,7 +24,17 @@ export type PokemonDefinitionDTO = {
   url: string;
 };
 
+export type PokemonStatsDTO = {
+  base_stat: number;
+  stat: {
+    name: string;
+  };
+};
+
 export type PokemonDTO = {
+  species: {
+    url: string;
+  };
   abilities: AbilityDTO[];
   base_experience: number;
   forms: PokemonDefinitionDTO[];
@@ -35,6 +49,7 @@ export type PokemonDTO = {
     slot: number;
     type: PokemonDefinitionDTO;
   }[];
+  stats: PokemonStatsDTO[];
 };
 
 export type PokemonListDTO = {
@@ -42,4 +57,24 @@ export type PokemonListDTO = {
   next: string | null;
   previous: string | null;
   results: PokemonDefinitionDTO[];
+};
+
+export type PokemonSpeciesDTO = {
+  name: string;
+  url: string;
+  evolution_chain: {
+    name: string;
+    url: string;
+  };
+};
+
+export type PokemonEvolutionDTO = {
+  evolves_to: PokemonEvolutionDTO[];
+  species: PokemonSpeciesDTO;
+  is_baby: boolean;
+};
+
+export type PokemonEvolutionChainDTO = {
+  id: number;
+  chain: PokemonEvolutionDTO;
 };

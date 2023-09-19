@@ -13,6 +13,5 @@ export default function usePokemon(name: string) {
       setLoading(false);
     })();
   }, [name]);
-
   return { pokemon, loading };
 }

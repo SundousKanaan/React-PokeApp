@@ -5,8 +5,9 @@ import $ from "./ItemsList.module.scss";
 interface Props {
   list: string[];
   title: string;
+  toggleDetailsView: (name: string) => void;
 }
-const ItemsList = ({ list, title }: Props) => {
+const ItemsList = ({ list, title, toggleDetailsView }: Props) => {
   const { favoritedState, toggleFavorite } = useFavoritesContext();
 
   return (
@@ -19,6 +20,7 @@ const ItemsList = ({ list, title }: Props) => {
               name={name}
               onAddToFavorites={() => toggleFavorite(name)}
               isFavorited={favoritedState.includes(name)}
+              toggleDetailsView={() => toggleDetailsView(name)}
             />
           </li>
         ))}
