@@ -1,6 +1,6 @@
 .pokemonlogoContainer {
     display: grid;
-    grid-template-columns: 3rem auto;
+    grid-template-columns: 3rem 1fr 3rem;
     gap: 2.5rem;
     align-items: center;
     justify-items: center;
@@ -13,7 +13,6 @@
     grid-area: 1/1/2/-1;
 }
 
-
 .menuButton {
     grid-area: 1/1;
     display: inline-flex;
@@ -23,8 +22,14 @@
     border-radius: 6.1875rem;
 
     background-color: var(--menu_background_color);
-    box-shadow: 0 0 1em var(--box-shadow);
+    box-shadow: 0 0 1em var(--shadow-color);
     z-index: 100;
+    cursor: pointer;
+
+    &:hover {
+        transition: 0.25s;
+        transform: scale(1.2);
+    }
 }
 
 .menuButton img {
@@ -32,18 +37,17 @@
     height: 1.5rem;
 }
 
-
 .closeSidebarButton {
     display: block;
     width: 100vw;
     height: 100vh;
     background-color: black;
-    opacity: .5;
+    opacity: 0.5;
 
     transform: translateX(-100%);
 
     z-index: 999999999;
-    transition: .5s;
+    transition: 0.5s;
 
     position: fixed;
     top: 0;
@@ -66,5 +70,4 @@
     .closeSidebarButton {
         display: none;
     }
-
 }

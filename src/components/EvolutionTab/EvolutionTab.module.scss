@@ -11,7 +11,7 @@
     align-items: center;
     border-radius: 0.5rem;
     box-shadow: var(--evolution-shadow);
-    background-color: var(--white);
+    background-color: var(--evolutions-background);
     position: relative;
     animation: appearance 2s 1 both linear;
 
@@ -26,6 +26,7 @@
       background-position: center;
       background-repeat: no-repeat;
       opacity: 0.3;
+      filter: var(--dashes-filter);
     }
 
     & .nameContainer {
@@ -37,7 +38,7 @@
       gap: 0.5rem;
 
       & .name {
-        color: var(--primary_midnight);
+        color: var(--evolution-name-color);
         font-size: 1rem;
         font-style: normal;
         line-height: 120%;

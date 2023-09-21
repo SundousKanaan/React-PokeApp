@@ -24,39 +24,41 @@ const AboutTab = ({ pokemonData }: Props) => {
 
   return (
     <ul className={$.aboutList}>
-      <li key={pokemon?.name}>
-        <p>Name</p>
-        <p>{pokemon?.name}</p>
+      <li className={$.listItemContainer}>
+        <p className={$.title}>Name</p>
+        <p className={$.info}>{pokemon?.name}</p>
       </li>
-      <li key="id">
-        <p>ID</p>
-        <p>{id}</p>
+      <li className={$.listItemContainer}>
+        <p className={$.title}>ID</p>
+        <p className={$.info}>{id}</p>
       </li>
-      <li key="base">
-        <p>Base</p>
-        <p className={$.uppercase}>{`${pokemon?.base} xp`}</p>
+      <li className={$.listItemContainer}>
+        <p className={$.title}>Base</p>
+        <p
+          className={[$.uppercase, $.info].join(" ")}
+        >{`${pokemon?.base} xp`}</p>
       </li>
-      <li key="Weight">
-        <p>Weight</p>
-        <p className={$.lowercase}>
+      <li className={$.listItemContainer}>
+        <p className={$.title}>Weight</p>
+        <p className={[$.lowercase, $.info].join(" ")}>
           {pokemon?.weight ? convertWeightToKilograms(pokemon.weight) : ""}
         </p>
       </li>
-      <li key="Height">
-        <p>Height</p>
-        <p className={$.lowercase}>
+      <li className={$.listItemContainer}>
+        <p className={$.title}>Height</p>
+        <p className={[$.lowercase, $.info].join(" ")}>
           {pokemon?.height ? convertHeightToMeters(pokemon.height) : ""}
         </p>
       </li>
 
-      <li key="Types">
-        <p>Types</p>
-        <p>{pokemon?.types.join(" | ")}</p>
+      <li className={$.listItemContainer}>
+        <p className={$.title}>Types</p>
+        <p className={$.info}>{pokemon?.types.join(" | ")}</p>
       </li>
 
-      <li key="Abilities">
-        <p>Abilities</p>
-        <p>{abilitiesList}</p>
+      <li className={$.listItemContainer}>
+        <p className={$.title}>Abilities</p>
+        <p className={$.info}>{abilitiesList}</p>
       </li>
     </ul>
   );

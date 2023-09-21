@@ -55,7 +55,7 @@
   text-align: start;
 
   vertical-align: middle;
-  color: var(--titles-color);
+  color: var(--pokemons-names-color);
   font-size: 1rem;
   text-transform: capitalize;
 }
@@ -63,7 +63,7 @@
 .popupButton {
   width: 2rem;
   height: 1rem;
-  background-color: var(--pokemon-info-button-background);
+  background-color: transparent;
   display: grid;
   place-content: center;
 }
