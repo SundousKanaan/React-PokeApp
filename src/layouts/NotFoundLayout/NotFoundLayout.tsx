@@ -17,7 +17,7 @@ const NotFoundLayout: React.FC = () => {
 
   const idChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = Number(event.target.value);
-    if (Number.isNaN(inputValue)) {
+    if (Number.isNaN(inputValue) || inputValue === 0) {
       setPokeId(143);
       setPokemonImg(getPokemonDreamWorldById(143));
     } else {
