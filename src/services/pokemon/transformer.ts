@@ -40,6 +40,14 @@ function transformSprites(response: SpritesDTO): PokemonSprites {
     frontShiny: response.front_shiny ?? undefined,
     frontFemale: response.front_female ?? undefined,
     frontShinyFemale: response.front_shiny_female ?? undefined,
+
+  };
+}
+
+function transformOtherSprites(response: SpritesDTO): PokemonSprites {
+  return {
+    dreamWorld: response.other?.dream_world?.front_default,
+    officialArtwork: response.other?.["official-artwork"]?.front_default,
   };
 }
 
@@ -49,6 +57,7 @@ export function transformPokemon(response: PokemonDTO): Pokemon {
     species: response.species,
     abilities: response.abilities?.map(transformAbility) ?? [],
     sprites: transformSprites(response.sprites),
+    other: transformOtherSprites(response.sprites),
     isDefault: response.is_default,
     order: response.order,
     id: response.id,

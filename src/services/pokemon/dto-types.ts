@@ -17,6 +17,14 @@ export type SpritesDTO = {
   front_female?: string;
   front_shiny?: string;
   front_shiny_female?: string;
+  other: {
+    dream_world: {
+      front_default: string;
+    };
+    ["official-artwork"]: {
+      front_default: string;
+    };
+  };
 };
 
 export type PokemonDefinitionDTO = {
@@ -44,6 +52,14 @@ export type PokemonDTO = {
   name: string;
   order: number;
   sprites: SpritesDTO;
+  other: {
+    dream_world: {
+      front_default: string;
+    };
+    official_artwork: {
+      front_default: string;
+    };
+  };
   weight: number;
   types: {
     slot: number;

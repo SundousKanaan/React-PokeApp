@@ -1,3 +1,5 @@
+import { off } from "process";
+
 export type PokemonAbility = {
   ability: {
     name: string;
@@ -7,15 +9,16 @@ export type PokemonAbility = {
 };
 
 export type PokemonSprites = {
-  backDefault: string;
+  backDefault?: string;
   backFemale?: string;
   backShiny?: string;
   backShinyFemale?: string;
-  frontDefault: string;
+  frontDefault?: string;
   frontFemale?: string;
   frontShiny?: string;
   frontShinyFemale?: string;
-  officialArtworkFrontDefault?: string;
+  officialArtwork?: string;
+  dreamWorld?: string;
 };
 
 export type PokemonState = {
@@ -38,6 +41,7 @@ export type Pokemon = {
   height: number;
   base: number;
   stats: PokemonState[];
+  other: PokemonSprites;
 };
 
 export type PokemonSpecies = {

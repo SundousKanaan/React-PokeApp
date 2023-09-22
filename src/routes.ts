@@ -1,6 +1,7 @@
 import paths from "~src/constants/paths";
 import FavoritesLayout from "~src/layouts/FavoritesLayout/FavoritesLayout";
 import HomeLayout from "~src/layouts/HomeLayout/HomeLayout";
+import NotFoundLayout from "./layouts/NotFoundLayout/NotFoundLayout";
 
 type Route = {
   path: string;
@@ -16,6 +17,10 @@ const routes: Route[] = [
   {
     path: "/favorites",
     view: FavoritesLayout,
+  },
+  {
+    path: "*",
+    view: NotFoundLayout,
   },
 ];
 

@@ -50,7 +50,10 @@ With each PR you can 'check' the user story that is related to it, so you have a
 - [x] The user must be able to open a single Pokemon in a Modal View (`React.createPortal`)
 - [x] The user must be able to see all the stats of a pokemon in three tabs
 - [x] The user must be able to see an overview of all their favorite Pokemons on a different page/route
-- [ ] The user should see a 'not found' page when the route is not identified
+- [x] The user should see a 'not found' page when the route is not identified
 - [ ] The user should be able to search through all the pokemons
 - [x] The user should be able to switch to darkmode in the sidebar
 - [ ] The user could be treated with nice animations throughout the app
+- [ ] Loading states (spinner of skeleton loading)
+- [ ] Pokemon battle functie?
+- [ ] Accessibility verbeteren
