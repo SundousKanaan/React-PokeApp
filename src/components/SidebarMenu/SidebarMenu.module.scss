@@ -30,6 +30,7 @@
 
 .pokemonlogoContainer {
     height: 5.625rem;
+    width: fit-content;
     padding: 0.875rem 3.6875rem;
     display: flex;
     justify-content: center;
@@ -38,7 +39,7 @@
     gap: 1rem;
 }
 
-.pokemonlogoContainer img {
+.pokemonLogo {
     width: 10.625rem;
     height: 3.875rem;
 }
@@ -90,7 +91,21 @@
 // Tablet small
 @media (min-width: 64rem) {
     .sidebar {
+        grid-area: 1/2/2/3;
         transform: none;
         z-index: 0;
+    }
+}
+
+@media (min-width: 90rem) {
+    .sidebar {
+        width: auto;
+        height: 100%;
+        border-radius: 1rem;
+        box-shadow: var(--box-shadow);
+
+        top: 1rem;
+        left: 1rem;
+        // bottom: 1rem;
     }
 }

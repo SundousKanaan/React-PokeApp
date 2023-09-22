@@ -70,4 +70,18 @@
     .closeSidebarButton {
         display: none;
     }
+
+    .headerComponent {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        // grid-column-start: 1;
+        // grid-column-end: 2;
+    }
+    .sidebarContainer {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        // background-color: red;
+    }
 }
