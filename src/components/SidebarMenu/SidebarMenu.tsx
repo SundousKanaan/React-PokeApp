@@ -19,7 +19,11 @@ const SidebarMenu: React.FC<Props> = ({ menuState }) => {
       <section className={classnames($.sidebar, { [$.isOpened]: menuState })}>
         <div className={$.TopContainer}>
           <div className={$.pokemonlogoContainer}>
-            <img className={$.pokemonLogo} src="images/pokemon-logo.svg" alt="Pokemon logo image" />
+            <img
+              className={$.pokemonLogo}
+              src="images/pokemon-logo.svg"
+              alt="Pokemon logo image"
+            />
           </div>
           <SearchBar />
         </div>
