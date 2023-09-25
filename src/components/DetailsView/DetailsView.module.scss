@@ -30,6 +30,7 @@
 
     & .closeIcon {
       display: block;
+      filter: var(--dashes-filter);
     }
 
     &:hover,
