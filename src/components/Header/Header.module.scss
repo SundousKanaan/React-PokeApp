@@ -1,3 +1,5 @@
+@import "/src/styling/z-index.module.scss";
+
 .pokemonlogoContainer {
     display: grid;
     grid-template-columns: 3rem 1fr 3rem;
@@ -23,7 +25,6 @@
 
     background-color: var(--menu_background_color);
     box-shadow: 0 0 1em var(--shadow-color);
-    z-index: 100;
     cursor: pointer;
 
     &:hover {
@@ -45,13 +46,13 @@
     opacity: 0.5;
 
     transform: translateX(-100%);
-
-    z-index: 999999999;
     transition: 0.5s;
 
     position: fixed;
     top: 0;
     left: 0;
+
+    @include z-index(navigation-shadow);
 }
 
 .closeSidebarButton.menuIsOpened {

@@ -1,3 +1,5 @@
+@import "/src/styling/z-index.module.scss";
+
 .sidebar {
     width: 20rem;
     height: 100vh;
@@ -6,11 +8,9 @@
     top: 0;
     left: 0;
     bottom: 0;
-
     transition: 0.5s;
-    z-index: 10000000000;
-
     transform: translateX(-100%);
+    @include z-index(navigation);
 }
 
 .sidebar.isOpened {
@@ -93,7 +93,6 @@
     .sidebar {
         grid-area: 1/2/2/3;
         transform: none;
-        z-index: 0;
     }
 }
 
