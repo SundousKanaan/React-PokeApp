@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SidebarButton from "~src/components/Buttons/SidebarButton";
 import usePokemon from "~src/hooks/usePokemon";
 import {
@@ -17,19 +17,22 @@ const NotFoundLayout: React.FC = () => {
 
   const idChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = Number(event.target.value);
-    if (Number.isNaN(inputValue) || inputValue === 0) {
+    if (inputValue === 0 || inputValue > 1000) {
       setPokeId(143);
       setPokemonImg(getPokemonDreamWorldById(143));
     } else {
       setPokeId(inputValue);
-      const dreamWorldImg = pokemon.pokemon?.other.dreamWorld;
-      if (!dreamWorldImg) {
-        setPokemonImg(getPokemonDreamWorldById(inputValue));
-      } else {
-        setPokemonImg(getPokemonArtworkById(inputValue));
-      }
     }
   };
+
+  useEffect(() => {
+    const dreamWorldImg = pokemon.pokemon?.other.dreamWorld;
+    if (!dreamWorldImg) {
+      setPokemonImg(getPokemonArtworkById(pokeId));
+    } else {
+      setPokemonImg(getPokemonDreamWorldById(pokeId));
+    }
+  }, [pokemon]);
 
   const containerStyle = {
     backgroundImage: `url(${pokemonImg})`,
@@ -43,7 +46,7 @@ const NotFoundLayout: React.FC = () => {
           <img
             className={$.errorImg}
             src={pokemonImg}
-            alt={`${pokemonName} dream world image`}
+            alt={`${pokemonName} image`}
           />
         </span>
       </div>
@@ -70,8 +73,6 @@ const NotFoundLayout: React.FC = () => {
           id="pokeId"
           placeholder="143"
           onChange={idChange}
-          min="0"
-          max="999"
         />
       </label>
     </div>

@@ -56,7 +56,6 @@ With each PR you can 'check' the user story that is related to it, so you have a
 - [x] Search loading states (spinner of skeleton loading)
 - [ ] "Not found" search empty state
 - [ ] Favorites empty state
-- [ ] App loading state
 - [ ] Pokemon battle functie?
 - [ ] Accessibility verbeteren
 - [ ] The user could be treated with nice animations throughout the app
