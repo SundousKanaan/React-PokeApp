@@ -8,14 +8,18 @@ import $ from "./FavoritesLayout.module.scss";
 
 const FavoritesLayout: React.FunctionComponent = () => {
   const { favoritedState } = useFavoritesContext();
+
   const { search } = useSearchBarContext();
   const [selectedPokemonName, setSelectedPokemonName] = useState<
     string | undefined
   >(undefined);
 
-  const filteredList = favoritedState.filter((pokemonName) =>
-    pokemonName.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredList = React.useMemo(() => {
+    if (!search) return favoritedState;
+    return favoritedState.filter((pokemonName) =>
+      pokemonName.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [favoritedState, search]);
 
   const toggleDetailsView = (name: string) => {
     setSelectedPokemonName(name);

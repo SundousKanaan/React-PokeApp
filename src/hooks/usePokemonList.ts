@@ -7,8 +7,8 @@ export default function usePokemonList() {
 
   useEffect(() => {
     (async () => {
-      const list = await getPokemonList();
-      setList(list);
+      const newList = await getPokemonList();
+      setList(newList);
       setLoading(false);
     })();
   }, []);

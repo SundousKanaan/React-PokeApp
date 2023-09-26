@@ -5,7 +5,7 @@ import api from "./api";
 export async function getPokemonList(): Promise<string[]> {
   const response = await api.get<PokemonListDTO>("/pokemon", {
     params: {
-      limit: 40,
+      limit: 1010,
       offset: 0,
     },
   });

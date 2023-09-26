@@ -8,14 +8,17 @@ import $ from "./HomeLayout.module.scss";
 
 const HomeLayout: React.FunctionComponent = () => {
   const { list } = usePokemonList();
+
   const { search } = useSearchBarContext();
   const [selectedPokemonName, setSelectedPokemonName] = useState<
     string | undefined
   >(undefined);
-
-  const filteredList = list.filter((pokemonName) =>
-    pokemonName.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredList = React.useMemo(() => {
+    if (!search) return list;
+    return list.filter((pokemonName) =>
+      pokemonName.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [list, search]);
 
   const toggleDetailsView = (name: string) => {
     setSelectedPokemonName(name);

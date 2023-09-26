@@ -6,7 +6,6 @@ import $ from "./app.module.scss";
 const App: React.FunctionComponent = () => {
   return (
     <div className={$.view}>
-
       <main className={$.main}>
         <Routes>
           {routes.map(({ path, view: Component }) => (
