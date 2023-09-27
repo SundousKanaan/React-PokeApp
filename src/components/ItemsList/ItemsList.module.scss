@@ -1,15 +1,14 @@
 .list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-
     gap: 1rem;
     padding: 0;
 }
 
 .listItem {
+    max-width: 10rem;
     list-style: none;
 }
-
 
 h1 {
     font-weight: 800;
@@ -23,11 +22,19 @@ h1 {
         grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
         padding-bottom: 3rem;
     }
+
+    .listItem {
+        max-width: 12rem;
+    }
 }
 
 // Web
 @media (min-width: 85rem) {
     .list {
         grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+
+    .listItem {
+        max-width: 14rem;
     }
 }

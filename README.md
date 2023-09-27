@@ -54,8 +54,8 @@ With each PR you can 'check' the user story that is related to it, so you have a
 - [x] The user should be able to search through all the pokemons
 - [x] The user should be able to switch to darkmode in the sidebar
 - [x] Search loading states (spinner of skeleton loading)
-- [ ] "Not found" search empty state
-- [ ] Favorites empty state
+- [x] "Not found" search empty state
+- [x] Favorites empty state
 - [ ] Pokemon battle functie?
 - [ ] Accessibility verbeteren
 - [ ] The user could be treated with nice animations throughout the app

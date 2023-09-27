@@ -1,0 +1,37 @@
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  justify-items: center;
+  row-gap: 1rem;
+}
+
+.title {
+  height: fit-content;
+  margin: 0;
+  font-size: 2rem;
+  color: var(--primary_red);
+  text-shadow: -0.1rem 0.1rem 0 var(--primary_midnight);
+}
+
+.description {
+  color: var(--primary_midnight);
+  height: fit-content;
+  margin: 0;
+}
+
+.img {
+  grid-area: 1/1/2/-1;
+  width: 50%;
+  opacity: 0.25;
+  animation: rotating 5s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

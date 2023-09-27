@@ -31,13 +31,15 @@ const SidebarMenu: React.FC<Props> = ({ menuState }) => {
         <div className={$.buttonsContainer}>
           <SidebarButton
             name="Pokémon"
-            icon="pokeball"
+            icon={location.pathname === "/" ? "active-pokeball" : "pokeball"}
             locationPath="/"
             isActive={location.pathname === "/"}
           />
           <SidebarButton
             name="Favorites"
-            icon="unfavorited"
+            icon={
+              location.pathname === "/favorites" ? "favorited" : "unfavorited"
+            }
             locationPath="/favorites"
             isActive={location.pathname === "/favorites"}
           />

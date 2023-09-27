@@ -20,7 +20,7 @@ const EvolutionTab = ({ pokeID }: Props) => {
         <li
           key={index}
           className={$.evolutionsItem}
-          style={{ animationDelay: `${index * 0.5}s` }}
+          style={{ animationDelay: `${index * 0.25}s` }}
         >
           <div className={$.nameContainer}>
             <h2 className={$.name}>{evolution.name}</h2>
@@ -29,12 +29,12 @@ const EvolutionTab = ({ pokeID }: Props) => {
           <div className={$.imagesContainer}>
             <img
               className={[$.evolutionImg, $.frontImg].join(" ")}
-              src={`${evolution.sprite}`}
+              src={`${evolution.frontDefault}`}
               alt={`${evolution.name} front_default `}
             />
             <img
               className={[$.evolutionImg, $.backImg].join(" ")}
-              src={`${evolution.sprite_Back}`}
+              src={`${evolution.frontShiny}`}
               alt={`${evolution.name} back_default `}
             />
           </div>

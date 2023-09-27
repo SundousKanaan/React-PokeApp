@@ -16,7 +16,8 @@ import {
   PokemonEvolutionDTO,
 } from "~src/services/pokemon/dto-types";
 import getPokemonIdByUrl from "~src/utils/get-pokemon-id";
-import { getPokemonBackSpriteById, getPokemonSpriteById } from "~src/utils/get-pokemon-image";
+import { getPokemonBackSpriteById, getPokemonFrontShinyById, getPokemonSpriteById } from "~src/utils/get-pokemon-image";
+import getPokemon from "~src/services/pokemon/getPokemon";
 
 function transformType(response: { type: { name: string } }) {
   return response?.type?.name;
@@ -96,8 +97,12 @@ const getPokemonEvolutions = (
       id: getPokemonIdByUrl(evolution.species.url),
       name: evolution.species.name,
       url: evolution.species.url,
-      sprite: getPokemonSpriteById(getPokemonIdByUrl(evolution.species.url)),
-      sprite_Back: getPokemonBackSpriteById(getPokemonIdByUrl(evolution.species.url)),
+      frontDefault: getPokemonSpriteById(
+        getPokemonIdByUrl(evolution.species.url)
+      ),
+      frontShiny: getPokemonFrontShinyById(
+        getPokemonIdByUrl(evolution.species.url)
+      ),
       is_baby: evolution.is_baby,
       species: evolution.species,
     },

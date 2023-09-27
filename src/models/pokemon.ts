@@ -1,5 +1,3 @@
-import { off } from "process";
-
 export type PokemonAbility = {
   ability: {
     name: string;
@@ -55,10 +53,10 @@ export type PokemonEvolution = {
   id: number;
   name: string;
   url: string;
-  sprite: string;
-  sprite_Back: string;
-  species: PokemonSpecies;
+  frontDefault: string;
+  frontShiny: string;
   is_baby: boolean;
+  species: PokemonSpecies;
 };
 
 export type PokemonEvolutionChain = {

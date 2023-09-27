@@ -18,6 +18,7 @@ export default function usePokemonEvolutions(id: number) {
         const transformedResponse = transformPokemonEvolutionChain(
           response.data
         );
+
         setPokemonEvolutionChain(transformedResponse);
       } catch (error) {
         console.error("error", error);

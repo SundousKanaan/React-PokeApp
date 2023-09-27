@@ -8,7 +8,6 @@ import $ from "./FavoritesLayout.module.scss";
 
 const FavoritesLayout: React.FunctionComponent = () => {
   const { favoritedState } = useFavoritesContext();
-
   const { search } = useSearchBarContext();
   const [selectedPokemonName, setSelectedPokemonName] = useState<
     string | undefined

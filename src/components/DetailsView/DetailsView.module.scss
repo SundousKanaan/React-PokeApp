@@ -12,8 +12,8 @@
   border: none;
   border-radius: 1rem;
   background-color: var(--sidebar_background_color);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   @include z-index(dialog);
 
   &::backdrop {
@@ -138,6 +138,13 @@
 .tabsContainer {
   width: 100%;
   padding: 1.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 // Tablet small
@@ -145,11 +152,8 @@
   .dialog {
     width: 70%;
     height: 60%;
-    flex-direction: row;
-  }
-
-  .pokemonContainer {
-    width: 50%;
+    grid-template-columns: 0.75fr 1fr;
+    grid-template-rows: auto;
   }
 }
 
@@ -158,11 +162,9 @@
   .dialog {
     width: 50%;
     height: 50%;
-    flex-direction: row;
   }
 
   .pokemonContainer {
-    width: 50%;
     padding: 2.75rem;
     gap: 2.57rem;
     grid-template-rows: 30% 1fr;

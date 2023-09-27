@@ -1,5 +1,3 @@
-import exp from "constants";
-
 export type AbilityDTO = {
   ability: {
     name: string;
@@ -17,7 +15,7 @@ export type SpritesDTO = {
   front_female?: string;
   front_shiny?: string;
   front_shiny_female?: string;
-  other: {
+  other?: {
     dream_world: {
       front_default: string;
     };
@@ -85,6 +83,7 @@ export type PokemonSpeciesDTO = {
 };
 
 export type PokemonEvolutionDTO = {
+  sprites: SpritesDTO;
   evolves_to: PokemonEvolutionDTO[];
   species: PokemonSpeciesDTO;
   is_baby: boolean;
