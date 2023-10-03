@@ -1,16 +1,15 @@
-// @import "./helpers.module.scss";
-
 $z-index: (
-  basic: 1,
-  secondary: 2,
-  overlay: 4,
-  dialog: 5,
-  navigation-shadow: 999999999,
-  navigation: 1000000000
+  basic,
+  secondary,
+  overlay,
+  dialog,
+  navigation-shadow,
+  navigation,
+  popover,
 );
 
 @function z-index($key) {
-  @return map-get($z-index, $key);
+  @return index($z-index, $key);
 }
 
 @mixin z-index($key) {

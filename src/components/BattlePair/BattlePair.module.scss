@@ -1,0 +1,71 @@
+@import "/src/styling/z-index.module.scss";
+
+.battleContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  background-color: var(--pokemon_title_background);
+}
+
+.battleNumber {
+  grid-area: 1/1/2/-1;
+  padding-left: 2.5rem;
+  position: relative;
+  margin: 0;
+
+  &::before {
+    --size: 2rem;
+    content: "";
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    background-image: url("/icons/battle.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    left: 0;
+    top: calc(50% - var(--size) / 2);
+  }
+}
+
+.battleNumber.activeBattle {
+  &::before {
+    background-image: url("/icons/active-battle.svg");
+  }
+}
+
+.battleRival {
+  border-radius: 1rem;
+}
+
+.closeButton {
+  grid-area: 1/1/2/-1;
+
+  justify-self: end;
+  align-self: center;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  box-shadow: inset 0 0 0 0.15rem var(--primary_purple);
+
+  @include z-index(secondary);
+}
+
+// Tablet small
+@media (min-width: 64rem) {
+  .battleContainer {
+    width: 100%;
+    align-self: center;
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+  }
+}
+
+
+
+
+

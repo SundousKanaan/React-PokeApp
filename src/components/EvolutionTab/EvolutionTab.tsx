@@ -13,6 +13,7 @@ const idGenerator = (id: number) => {
 const EvolutionTab = ({ pokeID }: Props) => {
   const Evolutions = usePokemonEvolutions(pokeID);
   const EvolutionsChain = Evolutions?.pokemonEvolutionChain;
+  
 
   return (
     <ul className={$.evolutionsList}>

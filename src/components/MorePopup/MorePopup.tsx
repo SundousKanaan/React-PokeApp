@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Popover } from "react-tiny-popover";
 import ActionButtons from "~src/components/ActionButtons/ActionButtons";
 import $ from "./MorePopup.module.scss";
@@ -9,6 +9,8 @@ interface Props {
   onAddToFavorites: () => void;
   isFavorited: boolean;
   toggleDetailsView: () => void;
+  isBattle: boolean;
+  onAddToBattle: () => void;
 }
 
 const MorePopup = ({
@@ -17,6 +19,8 @@ const MorePopup = ({
   onAddToFavorites,
   isFavorited,
   toggleDetailsView,
+  isBattle,
+  onAddToBattle,
   children,
 }: React.PropsWithChildren<Props>) => {
   const [showState, setShowState] = useState(false);
@@ -46,8 +50,14 @@ const MorePopup = ({
             icon={isFavorited ? "favorited" : "unfavorited"}
             onClick={onAddToFavorites}
           />
+          <ActionButtons
+            name={isBattle ? "Battle" : "Choose to battle"}
+            icon={isBattle ? "active-battle" : "battle"}
+            onClick={onAddToBattle}
+          />
         </div>
       }
+      containerClassName="popover"
     >
       <div>{children}</div>
     </Popover>

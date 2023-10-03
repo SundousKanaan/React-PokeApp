@@ -10,7 +10,7 @@ import $ from "./DetailsView.module.scss";
 interface Props {
   showState: boolean;
   toggleDetailsView: () => void;
-  setSelectedPokemonName: string;
+  setSelectedPokemonName: string |null;
 }
 
 const DetailsView = ({
@@ -48,10 +48,7 @@ const DetailsView = ({
           <p className={$.pokedexNumber}>{pokedex}</p>
           <ul className={$.typesList}>
             {pokemonData?.types.map((type) => (
-              <li
-                key={type}
-                className={[`${$.pokemonType}`, $[type]].join(" ")}
-              >
+              <li key={type} className={`${$.pokemonType} ${type}`}>
                 {type}
               </li>
             ))}

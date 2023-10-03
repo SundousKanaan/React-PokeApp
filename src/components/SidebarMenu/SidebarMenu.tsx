@@ -2,6 +2,7 @@ import classnames from "classnames";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import $ from "~src/components/SidebarMenu/SidebarMenu.module.scss";
+import { useBattleContext } from "~src/Contexts/battleContext";
 import { useDarkModeContext } from "~src/Contexts/darkModeContext";
 import SidebarButton from "../Buttons/SidebarButton";
 import ModeButton from "../ModeButton/ModeButton";
@@ -14,6 +15,12 @@ interface Props {
 const SidebarMenu: React.FC<Props> = ({ menuState }) => {
   const location = useLocation();
   const { isDarkMode, toggleDarkMode } = useDarkModeContext();
+  const { battleState } = useBattleContext();
+
+  const amountBattlePokemons = battleState.filter(
+    (pairs: { name1: string; name2: string | null }) => pairs.name2 !== null
+  ).length;
+
   return (
     <>
       <section className={classnames($.sidebar, { [$.isOpened]: menuState })}>
@@ -42,6 +49,16 @@ const SidebarMenu: React.FC<Props> = ({ menuState }) => {
             }
             locationPath="/favorites"
             isActive={location.pathname === "/favorites"}
+          />
+          <SidebarButton
+            name={
+              amountBattlePokemons === 0
+                ? "No battles started"
+                : `(${amountBattlePokemons}) Battle`
+            }
+            icon={location.pathname === "/battle" ? "active-battle" : "battle"}
+            locationPath="/battle"
+            isActive={location.pathname === "/battle"}
           />
         </div>
 

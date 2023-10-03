@@ -38,8 +38,9 @@
     color: var(--primary_midnight);
 }
 
-.inactiveButton img {
+.inactiveButton .icon {
     justify-self: center;
+    filter: var(--dashes-filter);
 }
 
 .activeButton {
@@ -62,3 +63,8 @@
 .activeButton span {
     color: var(--active-button-tekst);
 }
+
+.activeButton .icon {
+    filter: none;
+}
+

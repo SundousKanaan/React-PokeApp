@@ -2,14 +2,16 @@ import SidebarButton from "../Buttons/SidebarButton";
 import $ from "./EmptyState.module.scss";
 
 interface Props {
+  mainTitle: string;
   description?: string;
   showButton: boolean;
+  buttonText?: string;
 }
-
-const EmptyState = ({ description, showButton }: Props) => {
+// "Catch a Pokémon"
+const EmptyState = ({ mainTitle, description, showButton, buttonText }: Props) => {
   return (
     <div className={$.container}>
-      <h2 className={$.title}>No Pokemon caught</h2>
+      <h2 className={$.title}>{mainTitle}</h2>
       {description ? <p className={$.description}>{description}</p> : null}
       <img
         className={$.img}
@@ -19,7 +21,7 @@ const EmptyState = ({ description, showButton }: Props) => {
       {showButton ? (
         <span className={$.linkContainer}>
           <SidebarButton
-            name="Catch a Pokémon"
+            name={buttonText ? `${buttonText}` : "Catch a Pokémon"}
             icon="active-pokeball"
             locationPath="/"
             isActive={true}

@@ -2,7 +2,7 @@ import React from "react";
 import $ from "./ActionButtons.module.scss";
 
 interface Props {
-  name: string;
+  name?: string;
   icon: string;
   onClick?: () => void | undefined;
 }

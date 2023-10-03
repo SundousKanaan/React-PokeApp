@@ -1,9 +1,7 @@
 .view {
-  height: 100vh;
   display: grid;
   gap: 1rem;
 }
 .main {
-  height: 100%;
-  overflow: auto;
+  padding-bottom: 2rem;
 }

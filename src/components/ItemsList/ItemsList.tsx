@@ -1,4 +1,5 @@
 import PokemonCard from "~src/components/PokemonCard/PokemonCard";
+import { useBattleContext } from "~src/Contexts/battleContext";
 import { useFavoritesContext } from "~src/Contexts/favoritesContext";
 import { useSearchBarContext } from "~src/Contexts/searchBarContext";
 import EmptyState from "../EmptyState/EmptyState";
@@ -11,6 +12,7 @@ interface Props {
 }
 const ItemsList = ({ list, title, toggleDetailsView }: Props) => {
   const { favoritedState, toggleFavorite } = useFavoritesContext();
+  const { battleState, toggleBattle } = useBattleContext();
   const { search } = useSearchBarContext();
 
   return (
@@ -19,6 +21,7 @@ const ItemsList = ({ list, title, toggleDetailsView }: Props) => {
       <ul className={$.list}>
         {list.length === 0 ? (
           <EmptyState
+            mainTitle="No Pokemon caught"
             description={
               search === "" ? "Choose your first Pokémon." : undefined
             }
@@ -32,6 +35,12 @@ const ItemsList = ({ list, title, toggleDetailsView }: Props) => {
                 onAddToFavorites={() => toggleFavorite(name)}
                 isFavorited={favoritedState.includes(name)}
                 toggleDetailsView={() => toggleDetailsView(name)}
+                isBattle={battleState.some(
+                  (battle) => battle.name1 === name || battle.name2 === name
+                )}
+                onAddToBattle={() => {
+                  toggleBattle(name);
+                }}
               />
             </li>
           ))

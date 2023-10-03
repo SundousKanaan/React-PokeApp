@@ -1,4 +1,5 @@
 import paths from "~src/constants/paths";
+import BattleLayout from "~src/layouts/BattleLayout/BattleLayout";
 import FavoritesLayout from "~src/layouts/FavoritesLayout/FavoritesLayout";
 import HomeLayout from "~src/layouts/HomeLayout/HomeLayout";
 import NotFoundLayout from "./layouts/NotFoundLayout/NotFoundLayout";
@@ -17,6 +18,10 @@ const routes: Route[] = [
   {
     path: "/favorites",
     view: FavoritesLayout,
+  },
+  {
+    path: "/battle",
+    view: BattleLayout,
   },
   {
     path: "*",

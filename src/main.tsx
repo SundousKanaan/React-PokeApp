@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./app";
+import { BattleProvider } from "./Contexts/battleContext";
 import { DarkModeProvider } from "./Contexts/darkModeContext";
 import { FavoritesProvider } from "./Contexts/favoritesContext";
 import { SearchBarProvider } from "./Contexts/searchBarContext";
@@ -14,11 +15,13 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <SearchBarProvider>
-        <DarkModeProvider>
-          <FavoritesProvider>
-            <App />
-          </FavoritesProvider>
-        </DarkModeProvider>
+        <BattleProvider>
+          <DarkModeProvider>
+            <FavoritesProvider>
+              <App />
+            </FavoritesProvider>
+          </DarkModeProvider>
+        </BattleProvider>
       </SearchBarProvider>
     </BrowserRouter>
   </React.StrictMode>

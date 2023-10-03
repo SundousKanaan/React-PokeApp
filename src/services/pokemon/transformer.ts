@@ -16,8 +16,10 @@ import {
   PokemonEvolutionDTO,
 } from "~src/services/pokemon/dto-types";
 import getPokemonIdByUrl from "~src/utils/get-pokemon-id";
-import { getPokemonBackSpriteById, getPokemonFrontShinyById, getPokemonSpriteById } from "~src/utils/get-pokemon-image";
-import getPokemon from "~src/services/pokemon/getPokemon";
+import {
+  getPokemonFrontShinyById,
+  getPokemonSpriteById,
+} from "~src/utils/get-pokemon-image";
 
 function transformType(response: { type: { name: string } }) {
   return response?.type?.name;
@@ -41,7 +43,6 @@ function transformSprites(response: SpritesDTO): PokemonSprites {
     frontShiny: response.front_shiny ?? undefined,
     frontFemale: response.front_female ?? undefined,
     frontShinyFemale: response.front_shiny_female ?? undefined,
-
   };
 }
 

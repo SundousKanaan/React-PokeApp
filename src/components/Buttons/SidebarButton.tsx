@@ -19,7 +19,7 @@ const sidebarButton = ({ name, icon, locationPath, isActive }: Props) => {
         [$.activeButton]: isActive,
       })}
     >
-      <img src={iconSrc} alt={`${icon} svg icon`} />
+      <img className={$.icon} src={iconSrc} alt={`${icon} svg icon`} />
       <span>{name}</span>
     </Link>
   );

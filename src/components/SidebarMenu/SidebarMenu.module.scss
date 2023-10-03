@@ -99,12 +99,12 @@
 @media (min-width: 90rem) {
     .sidebar {
         width: auto;
-        height: 100%;
+        height: auto;
         border-radius: 1rem;
         box-shadow: var(--box-shadow);
 
         top: 1rem;
         left: 1rem;
-        // bottom: 1rem;
+        bottom: 1rem;
     }
 }

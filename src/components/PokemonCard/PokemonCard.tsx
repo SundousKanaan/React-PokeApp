@@ -10,6 +10,8 @@ interface Props {
   onAddToFavorites: () => void;
   isFavorited: boolean;
   toggleDetailsView: () => void;
+  isBattle?: boolean;
+  onAddToBattle?: () => void;
 }
 
 const PokemonCard = ({
@@ -17,6 +19,8 @@ const PokemonCard = ({
   onAddToFavorites,
   isFavorited = false,
   toggleDetailsView,
+  isBattle = false,
+  onAddToBattle,
 }: Props) => {
   const { pokemon, loading } = usePokemon(name);
   const pokeID: number = pokemon?.id || 0;
@@ -41,6 +45,13 @@ const PokemonCard = ({
   const handleDetails = () => {
     toggleDetailsView();
     handleTogglePopover();
+  };
+
+  const handleBattle = () => {
+    if (onAddToBattle) {
+      onAddToBattle();
+      handleTogglePopover();
+    }
   };
 
   const handleIntersection = (inView: boolean) => {
@@ -73,6 +84,8 @@ const PokemonCard = ({
                   onAddToFavorites={handleFavorites}
                   isFavorited={isFavorited}
                   toggleDetailsView={handleDetails}
+                  onAddToBattle={handleBattle}
+                  isBattle={isBattle}
                 >
                   <button
                     className={$.popupButton}
