@@ -16,11 +16,11 @@ const routes: Route[] = [
     view: HomeLayout,
   },
   {
-    path: "/favorites",
+    path: paths.favorites,
     view: FavoritesLayout,
   },
   {
-    path: "/battle",
+    path: paths.battle,
     view: BattleLayout,
   },
   {

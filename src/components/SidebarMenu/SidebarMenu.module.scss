@@ -41,7 +41,10 @@
 
 .pokemonLogo {
     width: 10.625rem;
-    height: 3.875rem;
+    // height: 3.875rem;
+    // width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .buttonsContainer {

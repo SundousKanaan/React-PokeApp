@@ -12,11 +12,13 @@ const Header: React.FunctionComponent = () => {
   return (
     <div className={$.headerComponent}>
       <div className={$.pokemonlogoContainer}>
-        <img
-          className={$.logo}
-          src="images/pokemon-logo.svg"
-          alt="Pokemon logo image"
-        />
+        <div className={$.logoContainer}>
+          <img
+            className={$.logo}
+            src="images/pokemon-logo.svg"
+            alt="Pokemon logo image"
+          />
+        </div>
         <button className={$.menuButton} onClick={openMenu}>
           <img src="/icons/Menu.svg" alt="menu svg icon" />
         </button>

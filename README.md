@@ -1,41 +1,49 @@
-# PokeApp - Web Code Challenge
+# PokeApp - Web Code Challenge (Triple)
 
 We've created a Code Challenge that will guide you through all the coding standards that Triple manages and will get you started in a React application.
 This also is the main reason that we've set this up.
-If you are not that familiar with React right now, we would recommend you to also check out the links in the reading list on the Wiki. This way you can read on how to do some things and immediately try to build it yourself and put it to practice. 
+If you are not that familiar with React right now, we would recommend you to also check out the links in the reading list on the Wiki. This way you can read on how to do some things and immediately try to build it yourself and put it to practice.
 
-## Fork and Clone the repository
-Before you get started on this we would like you to fork this repo and name it as following:  
-`code_challenge_react.{firstname}.{lastname}`  
-This will be the repository you will be working in and where you will be able to create Pull Requests in as well.  
+<!-- ## Fork and Clone the repository
+Before you get started on this we would like you to fork this repo and name it as following:
+`code_challenge_react.{firstname}.{lastname}`
+This will be the repository you will be working in and where you will be able to create Pull Requests in as well.
 You will create a PR per functionality/user story. It can be possible that a user story is to big to place in a single PR, if this happens, you can 'split' the work in 2 different PRs (for example: one for the functionality and one for UI).
-The guideline of a PR is a maximum of about 20-30 files, if it gets bigger than this, it should be split in multiple PR's.
+The guideline of a PR is a maximum of about 20-30 files, if it gets bigger than this, it should be split in multiple PR's. -->
 
 ## Get the app up and running
+
 To get this app started, always run the following commands:
 
 Install the packages:
+
 ```tcl
 npm install
 ```
+
 Start the application:
+
 ```tcl
 npm start
 ```
+
 This will get the app started and running on port `3000`
 
 ## The Design
+
 There is a design that is created in Figma, Figma also is the tool that we use for all the designs within Triple.
 This way you will get to know how to work with Figma and to recreate the design in the web application.
 Please note that you are looking at the 'Web' tab within Figma, this also contains the responsive design.
+Note: The design cannot be accessed without requesting permission.
 https://www.figma.com/file/dsgGXcu5WELIvRW90m5308/Pokemon-Code-Challenge?node-id=15%3A2863
 
 ## The API
-The app is build on the PokeAPI, all documentation of this API can be found on the following url:
-https://pokeapi.co/ 
 
+The app is build on the PokeAPI, all documentation of this API can be found on the following url:
+https://pokeapi.co/
 
 ## The challenges
+
 To get you started, a small base has already been setup in React, the first API calls are already implemented and from here on you should be able to continue by taking on each challenge step by step.
 The most important thing to know is that you can always aks questions to your mentor. This is why they are here, and why they are seated near you. They are already familiar with the challenge and therefore will be able to help you where needed.
 Next to that you'll need to know that there is no deadline for this, you can work on the challenges and get to know React on your own tempo. As you can see the user stories are setup with MoSCoW, so not all challenges **must** be done.
