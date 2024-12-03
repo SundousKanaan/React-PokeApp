@@ -20,7 +20,7 @@ const Header: React.FunctionComponent = () => {
           />
         </div>
         <button className={$.menuButton} onClick={openMenu}>
-          <img src="/icons/Menu.svg" alt="menu svg icon" />
+          <img src="/icons/menu.svg" alt="menu svg icon" />
         </button>
       </div>
 

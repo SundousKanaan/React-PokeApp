@@ -13,7 +13,7 @@ const SearchBar = () => {
 
   return (
     <label htmlFor="SearchBar" className={$.label}>
-      <img src="/icons/Search.svg" alt="Search svg icon" className={$.icon} />
+      <img src="/icons/search.svg" alt="Search svg icon" className={$.icon} />
       <input
         type="search"
         id="SearchBar"
