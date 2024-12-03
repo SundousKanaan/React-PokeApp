@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
-import pkg from "./package.json";
+import babel from "vite-plugin-babel";
 
 const SERVER_PORT = 3000;
 const OUTPUR_DIR = "./_dist";
@@ -11,15 +11,18 @@ export default defineConfig(({ command }) => {
   return {
     plugins: [
       react(),
+      babel(),
       tsconfigPaths({
         projects: ["./tsconfig.json"],
       }),
       legacy({
-        targets: pkg.browserslist,
+        // targets: pkg.browserslist,
+        targets: ["defaults", "not IE 11"],
       }),
     ].filter(Boolean),
     publicDir: "public",
     build: {
+      target: "esnext",
       outDir: OUTPUR_DIR,
     },
     css: {
@@ -44,6 +47,19 @@ export default defineConfig(({ command }) => {
         host: "localhost",
         protocol: "ws",
       },
+    },
+    test: {
+      globals: true,
+      eventNames: "jsdom",
+      setupFiles: "./src/test/setup.ts",
+    },
+    resolve: {
+      alias: {
+        "react/jsx-runtime": "react/jsx-runtime.js",
+      },
+    },
+    optimizeDeps: {
+      include: ["react/jsx-runtime"],
     },
   };
 });

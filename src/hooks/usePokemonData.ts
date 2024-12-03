@@ -10,6 +10,8 @@ export default function usePokemonData(name: string | null) {
         return;
       }
       const response = await getPokemon(name);
+      console.log({ response });
+
       setPokemonData(response);
     })();
   }, [name]);

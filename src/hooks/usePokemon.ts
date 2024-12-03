@@ -11,6 +11,7 @@ export default function usePokemon(name: string | number | null) {
       const response = await getPokemon(name?.toString() || "");
       setPokemon(response);
       setLoading(false);
+      console.log({ response });
     })();
   }, [name]);
   return { pokemon, loading };
