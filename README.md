@@ -65,5 +65,4 @@ With each PR you can 'check' the user story that is related to it, so you have a
 - [x] "Not found" search empty state
 - [x] Favorites empty state
 - [x] Pokemon battle functie?
-- [ ] Accessibility verbeteren
 - [x] The user could be treated with nice animations throughout the app
