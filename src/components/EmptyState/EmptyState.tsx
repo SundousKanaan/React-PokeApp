@@ -8,14 +8,19 @@ interface Props {
   buttonText?: string;
 }
 // "Catch a Pokémon"
-const EmptyState = ({ mainTitle, description, showButton, buttonText }: Props) => {
+const EmptyState = ({
+  mainTitle,
+  description,
+  showButton,
+  buttonText,
+}: Props) => {
   return (
     <div className={$.container}>
       <h2 className={$.title}>{mainTitle}</h2>
       {description ? <p className={$.description}>{description}</p> : null}
       <img
         className={$.img}
-        src="/public/icons/active-pokeball.svg"
+        src="/icons/active-pokeball.svg"
         alt="Pokeball illustration"
       />
       {showButton ? (
