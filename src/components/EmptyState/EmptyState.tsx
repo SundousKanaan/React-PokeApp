@@ -15,7 +15,7 @@ const EmptyState = ({ mainTitle, description, showButton, buttonText }: Props) =
       {description ? <p className={$.description}>{description}</p> : null}
       <img
         className={$.img}
-        src="/public/icons/Active-pokeball.svg"
+        src="/public/icons/active-pokeball.svg"
         alt="Pokeball illustration"
       />
       {showButton ? (
